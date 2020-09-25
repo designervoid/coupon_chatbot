@@ -102,9 +102,7 @@ const mutations = {
     state.steps[state.step].chatbotAnswer.show = true;
   },
   [CHANGE_PASSED_STATE](state) {
-    console.log(state.steps[state.step]);
     state.steps[state.step].isPassed = true;
-    console.log(state.steps[state.step]);
   }
 };
 

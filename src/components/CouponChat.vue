@@ -101,7 +101,6 @@ export default {
       "SHOW_CHATBOT_ANSWER"
     ]),
     callCallback(callback) {
-      callback.map(e => console.log(e));
       callback.map(mutation => this[mutation]());
     },
     cancelAlert() {
