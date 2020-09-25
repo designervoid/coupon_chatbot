@@ -4,6 +4,18 @@ const colorOfConfirmAndNotConfigrmButton = '#ffffff'
 const colorConfirmButton = '#e41a13'
 const colorNotConfirmButton = '#dbb665'
 
+const agreementStylesConfirm = {
+    backgroundColor: colorConfirmButton,
+    color: colorOfConfirmAndNotConfigrmButton,
+    'margin-right': '0.5rem'
+}
+
+const agreementStylesNotConfirm = {
+    backgroundColor: colorNotConfirmButton,
+    color: colorOfConfirmAndNotConfigrmButton,
+    'margin-left': '0.5rem'
+}
+
 const state = {
     step: 0,
     steps: [{
@@ -12,18 +24,12 @@ const state = {
             {
                 text: 'Yes',
                 callback: INCREMENT_STEP,
-                styles: {
-                    backgroundColor: colorConfirmButton,
-                    color: colorOfConfirmAndNotConfigrmButton
-                }
+                styles: { ...agreementStylesConfirm  }
             },
             {
                 text: 'No',
                 callback: 'cancelAlert',
-                styles: {
-                    backgroundColor: colorNotConfirmButton,
-                    color: colorOfConfirmAndNotConfigrmButton
-                }
+                styles: { ...agreementStylesNotConfirm }
             }
         ],
         file: {
@@ -39,18 +45,12 @@ const state = {
             {
                 text: 'Yes',
                 callback: INCREMENT_STEP,
-                styles: {
-                    backgroundColor: colorConfirmButton,
-                    color: colorOfConfirmAndNotConfigrmButton
-                }
+                styles: { ...agreementStylesConfirm  }
             },
             {
                 text: 'No',
                 callback: 'cancelAlert',
-                styles: {
-                    backgroundColor: colorNotConfirmButton,
-                    color: colorOfConfirmAndNotConfigrmButton
-                }
+                styles: { ...agreementStylesNotConfirm }
             }
         ],
         file: {
