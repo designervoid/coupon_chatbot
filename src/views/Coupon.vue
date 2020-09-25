@@ -1,16 +1,16 @@
 <template>
-    <section>
-        <CouponChat />
-    </section>
+  <section>
+    <CouponChat />
+  </section>
 </template>
 
 <script>
-import CouponChat from '@/components/CouponChat.vue'
+import CouponChat from "@/components/CouponChat.vue";
 
 export default {
-    name: 'Coupon',
-    components: {
-        CouponChat
-    }
-}
+  name: "Coupon",
+  components: {
+    CouponChat
+  }
+};
 </script>

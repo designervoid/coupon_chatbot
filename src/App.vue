@@ -2,7 +2,7 @@
   <div id="nav">
     <router-link to="/coupon">Coupon</router-link>
   </div>
-  <router-view/>
+  <router-view />
 </template>
 
 <style>
