@@ -101,7 +101,11 @@ export default {
       "SHOW_CHATBOT_ANSWER"
     ]),
     callCallback(callback) {
-      callback.map(mutation => this[mutation]());
+      if (Array.isArray(callback)) {
+          callback.map(mutation => this[mutation]());
+          return
+      }
+      this[callback]();
     },
     cancelAlert() {
       alert("Need to agree");
