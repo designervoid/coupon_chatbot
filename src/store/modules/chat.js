@@ -1,5 +1,9 @@
 import { INCREMENT_STEP, SHOW_CHATBOT_ANSWER } from '../mutation-types'
 
+const colorOfConfirmAndNotConfigrmButton = '#ffffff'
+const colorConfirmButton = '#e41a13'
+const colorNotConfirmButton = '#dbb665'
+
 const state = {
     step: 0,
     steps: [{
@@ -7,11 +11,19 @@ const state = {
         actions: [
             {
                 text: 'Yes',
-                callback: INCREMENT_STEP
+                callback: INCREMENT_STEP,
+                styles: {
+                    backgroundColor: colorConfirmButton,
+                    color: colorOfConfirmAndNotConfigrmButton
+                }
             },
             {
                 text: 'No',
-                callback: 'cancelAlert'
+                callback: 'cancelAlert',
+                styles: {
+                    backgroundColor: colorNotConfirmButton,
+                    color: colorOfConfirmAndNotConfigrmButton
+                }
             }
         ],
         file: {
@@ -26,11 +38,19 @@ const state = {
         actions: [
             {
                 text: 'Yes',
-                callback: INCREMENT_STEP
+                callback: INCREMENT_STEP,
+                styles: {
+                    backgroundColor: colorConfirmButton,
+                    color: colorOfConfirmAndNotConfigrmButton
+                }
             },
             {
                 text: 'No',
-                callback: 'cancelAlert'
+                callback: 'cancelAlert',
+                styles: {
+                    backgroundColor: colorNotConfirmButton,
+                    color: colorOfConfirmAndNotConfigrmButton
+                }
             }
         ],
         file: {
@@ -54,8 +74,12 @@ const state = {
         actions: [
             {
                 text: 'Отправить',
-                callback: SHOW_CHATBOT_ANSWER
-            }
+                callback: SHOW_CHATBOT_ANSWER,
+                styles: {
+                    backgroundColor: colorConfirmButton,
+                    color: colorOfConfirmAndNotConfigrmButton
+                }
+            },
         ],
     }]
 }

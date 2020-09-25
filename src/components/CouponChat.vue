@@ -1,7 +1,6 @@
 <template>
     <ChoiceButtons />
     <div class="container chat-window" :class="user_choice.text.length === 0 ? 'disabled' : '' ">
-        {{ steps[step] }}
         <div v-for="(step, index) in slicedSteps" :key="index">
             <div v-if="step.type === 'agreement'">
                 <div class="message chatbot">
@@ -17,7 +16,7 @@
                 </div>
                 <div class="message user">
                     <div class="textarea">
-                        <button v-for="(action, index) in step.actions" :key="index" @click="callCallback(action.callback)">
+                        <button v-for="(action, index) in step.actions" :key="index" @click="callCallback(action.callback)" class="actions-button" :style="action.styles">
                             {{ action.text }}
                         </button>
                     </div>
@@ -31,10 +30,10 @@
                     <div class="avatar">
                         <ChatbotAvatar />
                     </div>
-                    <div class="textarea">
-                        <input type="text" :name="step.inputs.email" :placeholder="step.text">
+                    <div class="textarea" style="display: flex; flex-direction: column;">
+                        <input type="text" :name="step.inputs.email" :placeholder="step.text" class="input">
 
-                        <button v-for="(action, index) in step.actions" :key="index" @click="callCallback(action.callback)">
+                        <button v-for="(action, index) in step.actions" :key="index" @click="callCallback(action.callback)" class="actions-button" :style="action.styles">
                             {{ action.text }}
                         </button>
                     </div>
@@ -104,10 +103,6 @@ export default {
     display: flex;
     justify-content: flex-end;
 }
-/* 
-.message {
-    flex-direction: row-reverse;
-} */
 
 .user .avatar {
     padding-left: 1rem;
@@ -137,5 +132,34 @@ export default {
 
 .attachment {
     display: flex;
+}
+
+.message {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.chat-window {
+    height: 50vh;
+    overflow: scroll;
+}
+
+.actions-button {
+    width: 85px; 
+    height: 42px; 
+    border-radius: 1rem; 
+    border-bottom-left-radius: 0; 
+    border: 0;
+    color: #000000;
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.input {
+    width: 201px; 
+    height: 45px; 
+    background-color: #faedd0; color: #000000;
+    border: 0;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
 }
 </style>
